@@ -1,8 +1,26 @@
+<?php
+    function zero_number() {
+
+    }
+
+    //Since 계산
+    $start_date = new DateTime('2007-09-01');
+    $end_date = new DateTime(date('Y-m-d', time()));    
+    
+    $date_diff    = date_diff($start_date, $end_date);   
+
+    $date_y = sprintf('%02d',$date_diff->y);
+    $date_m = sprintf('%02d',$date_diff->m);
+    $date_d = sprintf('%02d',$date_diff->d);
+
+    $date_days = sprintf('%02d',$date_diff->days);
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <!-- /.website title -->
-        <title>AfterWork Coming Soon Template</title>
+        <title>Welcome To Privater Lab</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <!-- CSS Files -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -21,7 +39,7 @@
         <div id="top"></div>
 
         <!-- /.parallax full screen background image -->
-        <div class="fullscreen landing parallax text-center" style="background-image:url('images/picjumbo.com_IMG_9076.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
+        <div class="fullscreen landing parallax text-center" style="background-image:url('images/main_bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
 
             <div class="overlay">
                 <div class="container">
@@ -29,38 +47,32 @@
                         <div class="col-md-12">
 
                             <!-- /.logo -->
-                            <div class="logo wow fadeInDown"> <a href=""><img src="images/logo.png" alt="logo"></a></div>
+                            <div class="logo wow fadeInDown"> <a href=""><img src="images/logo_20200402.png" alt="logo"></a></div>
                             <!-- /.main title -->
                             <h1>
-                                Coming Soon
+                                Privater Lab 에 오신걸 환영합니다!
                             </h1>
 
                             <!-- /.count down timer -->	
                             <ul class="countdown">
                                 <li>
                                     <div class="numb wow fadeInUp">
-                                        <span class="days">00</span>
-                                        <p class="days_ref">days</p>
+                                        <span class="days"><?=$date_y?></span>
+                                        <p class="days_ref">Year</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="numb wow fadeInUp">
-                                        <span class="hours">00</span>
-                                        <p class="hours_ref">hours</p>
+                                        <span class="hours"><?=$date_m?></span>
+                                        <p class="hours_ref">Month</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="numb wow fadeInUp">
-                                        <span class="minutes">00</span>
-                                        <p class="minutes_ref">minutes</p>
+                                        <span class="minutes"><?=$date_d?></span>
+                                        <p class="minutes_ref">Day</p>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="numb wow fadeInUp">
-                                        <span class="seconds">00</span>
-                                        <p class="seconds_ref">seconds</p>
-                                    </div>
-                                </li>
+                                </li>                           
                             </ul>			  
 
                             <!-- /.header paragraph -->
